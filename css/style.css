@@ -378,10 +378,10 @@ body::after {
   order: 4;
   flex: 0 0 auto
 }
-.logo-header__svg svg {
+.logo-header__first svg {
   width: 100%
 }
-.logo-header_.webp img {
+.logo-header__second img {
   width: 100%
 }
 .menu__list {
@@ -806,10 +806,10 @@ body::after {
   .title {
     font-size: 2.875rem
   }
-  .logo-header__svg {
+  .logo-header__first {
     width: 6.125rem
   }
-  .logo-header_.webp {
+  .logo-header__second {
     width: 7.5rem
   }
   .footer {
@@ -984,10 +984,10 @@ body::after {
   .header__btn {
     align-self: flex-end
   }
-  .logo-header__svg {
+  .logo-header__first {
     width: 5.0625rem
   }
-  .logo-header_.webp {
+  .logo-header__second {
     width: 5.625rem;
     display: none
   }
@@ -1086,10 +1086,10 @@ body::after {
   }
 }
 @media (min-width:47.99875em)and (max-width:71.5625em) {
-  .logo-header__svg {
+  .logo-header__first {
     width: clamp(5.0625rem ,2.8982149488rem + 4.509044613vw ,6.125rem)
   }
-  .logo-header_.webp {
+  .logo-header__second {
     width: clamp(5.625rem ,1.8056734391rem + 7.9571375524vw ,7.5rem)
   }
   .footer__body {
