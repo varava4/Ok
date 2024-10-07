@@ -379,12 +379,10 @@ body::after {
   flex: 0 0 auto
 }
 .logo-header__svg svg {
-  width: 100%;
-  height: auto
+  width: 100%
 }
 .logo-header_.webp img {
-  width: 100%;
-  height: auto
+  width: 100%
 }
 .menu__list {
   display: flex;
@@ -990,9 +988,7 @@ body::after {
     width: 5.0625rem
   }
   .logo-header_.webp {
-    width: 5.625rem
-  }
-  .logo-header_.webp {
+    width: 5.625rem;
     display: none
   }
   .menu__list {
