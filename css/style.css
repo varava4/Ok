@@ -105,7 +105,7 @@ h6 {
   font-size: inherit
 }
 body {
-  background-color: #fffcf6
+  background: #fffcf6
 }
 .lock body {
   overflow: hidden;
@@ -354,11 +354,10 @@ body::after {
   left: 0;
   width: 100%;
   z-index: 50;
-  background-color: #fff;
+  background: #fff;
   border-radius: 0 0 .9375rem .9375rem
 }
 .menu-open .header {
-  background: #fff;
   transition: all .6s
 }
 .header__container {
@@ -877,18 +876,18 @@ body::after {
   .menu__body {
     position: fixed;
     width: 70%;
-    height: 100vh;
+    height: 100%;
     right: -100%;
     top: 0;
     overflow: auto;
     padding: 7.5rem .9375rem .9375rem 1.875rem;
-    transition: right .6s;
-    background-color: #fff;
+    background: #fff;
+    gap: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2.5rem;
-    border-radius: 0 0 0 1.5625rem
+    border-radius: 0 0 0 1.5625rem;
+    transition: right .6s
   }
   .menu__body::before {
     content: "";
@@ -899,7 +898,7 @@ body::after {
     top: 0;
     transition: right .6s;
     z-index: 2;
-    background-color: #fff
+    background: #fff
   }
   .menu-open .menu__body {
     right: 0

@@ -8069,28 +8069,33 @@
     });
     btnLoader.addEventListener("click", (() => {
         gsapWithCSS.to(".loader", {
-            yPercent: -1e3,
-            duration: 10
-        });
-        gsapWithCSS.from(".header", {
             yPercent: -100,
             duration: 1
-        }, "-=9.5");
+        });
+        gsapWithCSS.from(".header", {
+            opacity: 0,
+            duration: 1
+        }, "-=0.5");
         gsapWithCSS.from(".main__content", {
             xPercent: -25,
             duration: 1,
             opacity: 0
-        }, "-=9.5");
+        }, "-=0.5");
         gsapWithCSS.from(".main__images", {
             xPercent: 25,
             duration: 1,
             opacity: 0
-        }, "-=9.5");
+        }, "-=1");
         gsapWithCSS.from(".main__items", {
             yPercent: 25,
             duration: 1,
             opacity: 0
-        }, "-=9.5");
+        }, "-=1");
+        gsapWithCSS.to(".loader", {
+            css: {
+                display: "none"
+            }
+        });
     }));
     window["FLS"] = true;
     addLoadedClass();
