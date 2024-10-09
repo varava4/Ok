@@ -11478,6 +11478,105 @@
             }
         });
     }));
+    const laptopScreen = window.matchMedia("(min-width:767.98px)");
+    const tlItem = gsapWithCSS.timeline();
+    if (laptopScreen.matches) tlItem.from(".item-come-1", {
+        scrollTrigger: {
+            trigger: ".item-come-1",
+            start: "-40% 0%",
+            scrub: true,
+            pin: true
+        }
+    }).from(".item-come__image-1", {
+        scrollTrigger: {
+            trigger: ".item-come-1",
+            start: "-40% 0",
+            scrub: true
+        },
+        scale: 1.5,
+        xPercent: 50
+    }).from(".item-come__content-1", {
+        scrollTrigger: {
+            trigger: ".item-come-1",
+            start: "-40% 0",
+            scrub: true
+        },
+        opacity: 0,
+        xPercent: 100,
+        scale: 1.5
+    }).from(".item-come-2", {
+        scrollTrigger: {
+            trigger: ".item-come-2",
+            start: "-40% 0%",
+            scrub: true,
+            pin: true
+        }
+    }).from(".item-come__image-2", {
+        scrollTrigger: {
+            trigger: ".item-come-2",
+            start: "-40% 0",
+            scrub: true
+        },
+        scale: 1.5,
+        xPercent: -50
+    }).from(".item-come__content-2", {
+        scrollTrigger: {
+            trigger: ".item-come-2",
+            start: "-40% 0",
+            scrub: true
+        },
+        opacity: 0,
+        xPercent: -100,
+        scale: 1.5
+    }).from(".item-come-3", {
+        scrollTrigger: {
+            trigger: ".item-come-3",
+            start: "-40% 0%",
+            scrub: true,
+            pin: true
+        }
+    }).from(".item-come__image-3", {
+        scrollTrigger: {
+            trigger: ".item-come-3",
+            start: "-40% 0",
+            scrub: true
+        },
+        scale: 1.5,
+        xPercent: 50
+    }).from(".item-come__content-3", {
+        scrollTrigger: {
+            trigger: ".item-come-3",
+            start: "-40% 0",
+            scrub: true
+        },
+        opacity: 0,
+        xPercent: 100,
+        scale: 1.5
+    }).from(".item-come-4", {
+        scrollTrigger: {
+            trigger: ".item-come-4",
+            start: "-40% 0%",
+            scrub: true,
+            pin: true
+        }
+    }).from(".item-come__image-4", {
+        scrollTrigger: {
+            trigger: ".item-come-4",
+            start: "-40% 0",
+            scrub: true
+        },
+        scale: 1.5,
+        xPercent: -50
+    }).from(".item-come__content-4", {
+        scrollTrigger: {
+            trigger: ".item-come-4",
+            start: "-40% 0",
+            scrub: true
+        },
+        opacity: 0,
+        xPercent: -100,
+        scale: 1.5
+    });
     window["FLS"] = true;
     addLoadedClass();
     menuInit();
