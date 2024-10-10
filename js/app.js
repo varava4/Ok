@@ -5684,6 +5684,69 @@
             },
             on: {}
         });
+        if (document.querySelector(".blog__slider")) new swiper_core_Swiper(".blog__slider", {
+            modules: [ Navigation, Parallax ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 3,
+            spaceBetween: 60,
+            speed: 1200,
+            parallax: true,
+            pagination: {
+                el: ".blog__swiper-pagination",
+                clickable: true
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 15,
+                    centeredSlides: true
+                },
+                480: {
+                    slidesPerView: 1.4,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                },
+                768: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 20
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 60
+                }
+            },
+            on: {}
+        });
+        if (document.querySelector(".blog-image__slider")) new swiper_core_Swiper(".blog-image__slider", {
+            modules: [ Navigation, Parallax ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 5,
+            spaceBetween: 35,
+            speed: 1200,
+            parallax: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1.4,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                },
+                1260: {
+                    slidesPerView: 5,
+                    spaceBetween: 35
+                }
+            },
+            on: {}
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -11493,7 +11556,7 @@
             start: "-40% 0",
             scrub: true
         },
-        scale: 1.5,
+        scale: 1.3,
         xPercent: 50
     }).from(".item-come__content-1", {
         scrollTrigger: {
@@ -11517,7 +11580,7 @@
             start: "-40% 0",
             scrub: true
         },
-        scale: 1.5,
+        scale: 1.3,
         xPercent: -50
     }).from(".item-come__content-2", {
         scrollTrigger: {
@@ -11541,7 +11604,7 @@
             start: "-40% 0",
             scrub: true
         },
-        scale: 1.5,
+        scale: 1.3,
         xPercent: 50
     }).from(".item-come__content-3", {
         scrollTrigger: {
@@ -11565,7 +11628,7 @@
             start: "-40% 0",
             scrub: true
         },
-        scale: 1.5,
+        scale: 1.3,
         xPercent: -50
     }).from(".item-come__content-4", {
         scrollTrigger: {
@@ -11576,6 +11639,108 @@
         opacity: 0,
         xPercent: -100,
         scale: 1.5
+    });
+    const tlCome = gsapWithCSS.timeline();
+    if (laptopScreen.matches) tlCome.from(".shop__body", {
+        scrollTrigger: {
+            trigger: ".shop__body",
+            start: "-40% 0%",
+            scrub: true,
+            pin: true
+        }
+    }).from(".shop__images", {
+        scrollTrigger: {
+            trigger: ".shop__body",
+            start: "-40% 0",
+            scrub: true
+        },
+        scale: 1.3,
+        xPercent: -50
+    }).from(".shop__content", {
+        scrollTrigger: {
+            trigger: ".shop__body",
+            start: "-40% 0",
+            scrub: true
+        },
+        opacity: 0,
+        xPercent: -100,
+        scale: 1.5
+    }); else tlCome.from(".shop__body", {
+        scrollTrigger: {
+            trigger: ".shop__body",
+            start: "-15% 0%",
+            scrub: true,
+            pin: true
+        }
+    }).from(".shop__images", {
+        scrollTrigger: {
+            trigger: ".shop__body",
+            start: "-15% 0",
+            scrub: true
+        },
+        css: {
+            rotateX: "90deg",
+            transformOrigin: "top",
+            height: 0
+        }
+    }).from(".shop__content", {
+        scrollTrigger: {
+            trigger: ".shop__body",
+            start: "-50% 0",
+            scrub: true
+        },
+        yPercent: -100
+    });
+    const tlBeauty = gsapWithCSS.timeline();
+    if (laptopScreen.matches) tlBeauty.from(".beauty__body", {
+        scrollTrigger: {
+            trigger: ".beauty__body",
+            start: "-40% 0%",
+            scrub: true,
+            pin: true
+        }
+    }).from(".beauty__images", {
+        scrollTrigger: {
+            trigger: ".beauty__body",
+            start: "-40% 0",
+            scrub: true
+        },
+        scale: 1.3,
+        xPercent: 50
+    }).from(".beauty__content", {
+        scrollTrigger: {
+            trigger: ".beauty__body",
+            start: "-40% 0",
+            scrub: true
+        },
+        opacity: 0,
+        xPercent: 100,
+        scale: 1.5
+    }); else tlCome.from(".beauty__body", {
+        scrollTrigger: {
+            trigger: ".beauty__body",
+            start: "-15% 0%",
+            scrub: true,
+            pin: true
+        }
+    }).from(".beauty__images", {
+        scrollTrigger: {
+            trigger: ".beauty__body",
+            start: "-15% 0",
+            scrub: true
+        },
+        css: {
+            rotateX: "90deg",
+            transformOrigin: "top",
+            height: 0
+        }
+    }).from(".beauty__content", {
+        scrollTrigger: {
+            trigger: ".beauty__body",
+            start: "-50% 0",
+            scrub: true
+        },
+        yPercent: -100
     });
     window["FLS"] = true;
     addLoadedClass();
