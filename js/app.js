@@ -6282,6 +6282,7 @@
                 speed: 1800,
                 parallax: true,
                 loop: true,
+                centeredSlides: true,
                 autoplay: {
                     delay: 3500,
                     disableOnInteraction: false,
@@ -6323,6 +6324,7 @@
                 speed: 1200,
                 parallax: true,
                 loop: true,
+                centeredSlides: true,
                 autoplay: {
                     delay: 3e3,
                     disableOnInteraction: false
@@ -12280,31 +12282,6 @@
             opacity: 0,
             xPercent: -100,
             scale: 1.5
-        }); else tlCome.from(".shop__body", {
-            scrollTrigger: {
-                trigger: ".shop__body",
-                start: "-15% 0%",
-                scrub: true,
-                pin: true
-            }
-        }).from(".shop__images", {
-            scrollTrigger: {
-                trigger: ".shop__body",
-                start: "-15% 0",
-                scrub: true
-            },
-            css: {
-                rotateX: "90deg",
-                transformOrigin: "top",
-                height: 0
-            }
-        }).from(".shop__content", {
-            scrollTrigger: {
-                trigger: ".shop__body",
-                start: "-50% 0",
-                scrub: true
-            },
-            yPercent: -100
         });
         const tlBeauty = gsapWithCSS.timeline();
         if (laptopScreen.matches) tlBeauty.from(".beauty__body", {
@@ -12331,31 +12308,32 @@
             opacity: 0,
             xPercent: 100,
             scale: 1.5
-        }); else tlCome.from(".beauty__body", {
+        });
+        const tlContact = gsapWithCSS.timeline();
+        if (laptopScreen.matches) tlContact.from(".contact__container", {
             scrollTrigger: {
-                trigger: ".beauty__body",
-                start: "-15% 0%",
+                trigger: ".contact__container",
+                start: "-40% 0%",
                 scrub: true,
                 pin: true
             }
-        }).from(".beauty__images", {
+        }).from(".contact__map", {
             scrollTrigger: {
-                trigger: ".beauty__body",
-                start: "-15% 0",
+                trigger: ".contact__container",
+                start: "-40% 0",
                 scrub: true
             },
-            css: {
-                rotateX: "90deg",
-                transformOrigin: "top",
-                height: 0
-            }
-        }).from(".beauty__content", {
+            scale: 1.3,
+            xPercent: -50
+        }).from(".contact__content", {
             scrollTrigger: {
-                trigger: ".beauty__body",
-                start: "-50% 0",
+                trigger: ".contact__container",
+                start: "-40% 0",
                 scrub: true
             },
-            yPercent: -100
+            opacity: 0,
+            xPercent: -100,
+            scale: 1.5
         });
         window["FLS"] = true;
         addLoadedClass();
