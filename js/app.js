@@ -6614,10 +6614,10 @@
         const script_button = document.querySelector(".menu__link-active");
         const script_element = document.querySelector(".sub-menu__list");
         script_button.addEventListener("click", (function() {
-            script_element.classList.add("_active");
+            if (!script_element.classList.contains("_active")) script_element.classList.add("_active");
         }));
         document.addEventListener("click", (function(event) {
-            if (!script_element.contains(event.target) && !script_button.contains(event.target)) script_element.classList.remove("_active");
+            if (!script_element.contains(event.target) && !script_button.contains(event.target)) if (script_element.classList.contains("_active")) script_element.classList.remove("_active");
         }));
         function _assertThisInitialized(self) {
             if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
