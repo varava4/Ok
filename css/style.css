@@ -425,7 +425,7 @@ body::after {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   z-index: 50;
   background: #fff;
   border-radius: 0 0 .9375rem .9375rem
@@ -450,6 +450,12 @@ body::after {
   order: 4;
   flex: 0 0 auto
 }
+.sub-menu__link {
+  text-wrap: nowrap;
+  text-align: end;
+  font-weight: 600;
+  font-size: 1.125rem
+}
 .logo-header__first img {
   width: 100%
 }
@@ -467,13 +473,13 @@ body::after {
   flex-wrap: wrap
 }
 .menu__item {
+  position: relative;
   display: inline-flex;
   align-self: flex-end;
-  order: 1
+  order: 1;
+  flex-direction: column
 }
 .menu__link {
-  display: inline-flex;
-  align-items: center;
   text-align: end;
   font-weight: 600
 }
@@ -950,7 +956,10 @@ body::after {
   width: 100%;
   font-size: 1.125rem;
   font-weight: 500;
-  margin-bottom: 2.1875rem
+  margin-bottom: 2.1875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
 }
 .item-come__table tr {
   display: flex;
@@ -997,7 +1006,9 @@ body::after {
 .shop__content {
   position: relative;
   z-index: 10;
-  flex: 50%
+  flex: 50%;
+  display: flex;
+  flex-direction: column
 }
 .shop__title {
   margin-bottom: 2.5rem
@@ -1081,7 +1092,9 @@ body::after {
 .beauty__content {
   position: relative;
   z-index: 10;
-  flex: 50%
+  flex: 50%;
+  display: flex;
+  flex-direction: column
 }
 .beauty__title {
   margin-bottom: 2.5rem
@@ -1153,7 +1166,9 @@ body::after {
   animation: rotate 8s linear infinite
 }
 .blog__container {
-  position: relative
+  position: relative;
+  display: flex;
+  flex-direction: column
 }
 .blog__title {
   text-align: center;
@@ -1470,6 +1485,51 @@ body::after {
   display: none!important
 }
 @media (min-width:47.99875em) {
+  .sub-menu__list {
+    position: absolute;
+    left: 50%;
+    top: .9375rem;
+    padding: 1.25rem 0 0 0;
+    -webkit-filter: drop-shadow(5px 2px 4px rgba(0, 0, 0, .4352941176));
+    filter: drop-shadow(5px 2px 4px rgba(0, 0, 0, .4352941176));
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(-50%) rotateX(-90deg);
+    transform: translateX(-50%) rotateX(-90deg);
+    transition: all .3s linear;
+    visibility: hidden;
+    opacity: 0
+  }
+  .sub-menu__list::after {
+    content: "";
+    bottom: 85%;
+    left: 50%;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: #fff;
+    border-width: 20px;
+    margin-left: -18px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+  }
+  .sub-menu__item {
+    background-color: #fff;
+    padding: .625rem 1.25rem
+  }
+  .sub-menu__item:first-child {
+    border-radius: .9375rem .9375rem 0 0;
+    padding-top: 1.25rem
+  }
+  .sub-menu__item:last-child {
+    border-radius: 0 0 .9375rem .9375rem;
+    padding-bottom: 1.25rem
+  }
+  .sub-menu__link {
+    font-size: 1rem
+  }
   .menu__link {
     font-size: 1rem
   }
@@ -1508,6 +1568,14 @@ body::after {
   }
   .contact__map {
     flex: 50%
+  }
+}
+@media (min-width:47.99875em)and (any-hover:hover) {
+  .menu__item:hover .sub-menu__list {
+    -webkit-transform: translateX(-50%) rotateX(0);
+    transform: translateX(-50%) rotateX(0);
+    visibility: visible;
+    opacity: 1
   }
 }
 @media (min-width:71.5625em) {
@@ -1796,6 +1864,22 @@ body::after {
   .header__btn {
     align-self: flex-end
   }
+  .sub-menu__list {
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 1.25rem;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    transition: all .6s
+  }
+  .sub-menu__list._active {
+    padding-top: 1.25rem;
+    height: 100%;
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0)
+  }
   .logo-header__first {
     width: 5.0625rem
   }
@@ -1827,6 +1911,12 @@ body::after {
   .main__body {
     flex-direction: column-reverse;
     align-items: center
+  }
+  .main__title {
+    text-align: center
+  }
+  .main__text {
+    text-align: center
   }
   .main__links {
     flex-direction: column
@@ -1869,6 +1959,14 @@ body::after {
   .come__item {
     flex-direction: column
   }
+  .item-come__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+  .item-come__table {
+    align-items: center
+  }
   .shop__body {
     -webkit-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
@@ -1876,6 +1974,9 @@ body::after {
   }
   .shop__body {
     flex-direction: column-reverse
+  }
+  .shop__content {
+    align-items: center
   }
   .shop__inner {
     justify-content: center
@@ -1887,6 +1988,9 @@ body::after {
   }
   .beauty__body {
     flex-direction: column-reverse
+  }
+  .beauty__content {
+    align-items: center
   }
   .beauty__inner {
     justify-content: center
