@@ -12065,7 +12065,8 @@
         ScrollTrigger_getGSAP() && ScrollTrigger_gsap.registerPlugin(ScrollTrigger_ScrollTrigger);
         var ScrollSmoother_min = __webpack_require__(130);
         gsapWithCSS.registerPlugin(ScrollTrigger_ScrollTrigger, ScrollSmoother_min.ScrollSmoother);
-        ScrollSmoother_min.ScrollSmoother.create({
+        const laptopScreen = window.matchMedia("(min-width:767.98px)");
+        if (laptopScreen.matches) ScrollSmoother_min.ScrollSmoother.create({
             wrapper: ".wrapper",
             content: ".page",
             smooth: 2.5,
@@ -12158,7 +12159,6 @@
                 }
             });
         }));
-        const laptopScreen = window.matchMedia("(min-width:767.98px)");
         const tlItem = gsapWithCSS.timeline();
         if (laptopScreen.matches) tlItem.from(".item-come-1", {
             scrollTrigger: {
