@@ -10,7 +10,7 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241015131934">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241015163840">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,19 +48,19 @@
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link link">Главная</a></li>
+							<li class="menu__item"><a href="#" data-goto=".page__main" data-goto-header class="menu__link link">Главная</a></li>
 							<li class="menu__item">
 								<a href="#" class="menu__link link menu__link-active">Стоимость</a>
 								<ul class="sub-menu__list">
-									<li class="sub-menu__item"><a href="#" class="sub-menu__link link">Мужской зал</a></li>
-									<li class="sub-menu__item"><a href="#" class="sub-menu__link link">Женский зал</a></li>
-									<li class="sub-menu__item"><a href="#" class="sub-menu__link link">Маникюр</a></li>
-									<li class="sub-menu__item"><a href="#" class="sub-menu__link link">Brow-сервис</a></li>
+									<li class="sub-menu__item"><a href="#" data-goto=".item-come-2" class="sub-menu__link link">Мужской зал</a></li>
+									<li class="sub-menu__item"><a href="#" data-goto=".item-come-1" class="sub-menu__link link">Женский зал</a></li>
+									<li class="sub-menu__item"><a href="#" data-goto=".item-come-3" class="sub-menu__link link">Маникюр</a></li>
+									<li class="sub-menu__item"><a href="#" data-goto=".item-come-4" class="sub-menu__link link">Brow-сервис</a></li>
 								</ul>
 							</li>
-							<li class="menu__item"><a href="#" class="menu__link link">Магазин косметики</a></li>
+							<li class="menu__item"><a href="#" data-goto=".page__shop" class="menu__link link">Магазин косметики</a></li>
 							<li class="menu__item"><a href="#" class="menu__link link">О нас</a></li>
-							<li class="menu__item"><a href="#" class="menu__link link">Контакты</a></li>
+							<li class="menu__item"><a href="#" data-goto=".page__contact" data-goto-header class="menu__link link">Контакты</a></li>
 							<li class="menu__item"><a href="#" class="menu__link"><svg>
 										<use xlink:href="img/icons/icons.svg#instagram"></use>
 									</svg></a></li>
@@ -114,7 +114,7 @@
 							<div class="item-main__label">+375 25 655-44-33</div>
 							<div class="item-main__sublabel">Запись и информация</div>
 						</a>
-						<a href="#" data-da=".header__container, 767.98, 2" class="main__item item-main item-main-link">
+						<a href="#" data-da=".header__container, 767.98, 2" data-goto=".page__contact" data-goto-header class="main__item item-main item-main-link">
 							<div class="item-main__icon"><svg>
 									<use xlink:href="img/icons/icons.svg#location"></use>
 								</svg></div>
@@ -483,7 +483,7 @@
 
 		</main>
 	</div>
-	<script src="js/app.min.js?_v=20241015131934"></script>
+	<script src="js/app.min.js?_v=20241015163840"></script>
 </body>
 
 </html>
