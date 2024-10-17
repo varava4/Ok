@@ -383,8 +383,7 @@ body::after {
   column-gap: 3rem;
   row-gap: 1.25rem;
   border-radius: .9375rem;
-  box-shadow: 0 0 20px 0 rgba(254,91,20,.4);
-  background: linear-gradient(270deg,rgba(253,89,19,.3333333333) 0,rgba(253,159,19,.262745098) 100%)
+  background: linear-gradient(270deg,#ffdacb 0,#fff1dd 100%)
 }
 .banner__sublabel {
   font-size: 1.125rem;
@@ -418,6 +417,40 @@ body::after {
   position: relative;
   z-index: 10;
   padding: .9375rem 1.25rem
+}
+.circle {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background-color: #feb951
+}
+.circle--blue {
+  background-color: #00c3ff
+}
+.circle-border {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  border: .0625rem solid #fe5b13
+}
+.triangle {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 13.5px solid transparent;
+  border-right: 13.5px solid transparent;
+  border-bottom: 24px solid rgba(245,2,118,.5)
+}
+.triangle::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 18px solid #fffcf6
 }
 .header {
   padding-top: .9375rem;
@@ -606,6 +639,16 @@ body::after {
   opacity: 0;
   transition: opacity .6s
 }
+.page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/decor.svg) center/cover no-repeat;
+  z-index: -1
+}
 .menu-open .page {
   -webkit-filter: blur(5px);
   filter: blur(5px)
@@ -617,6 +660,9 @@ body::after {
 .page__main {
   margin-top: 5rem;
   padding-top: 1.9375rem
+}
+.main__container {
+  position: relative
 }
 .main__body {
   display: flex;
@@ -631,8 +677,9 @@ body::after {
 .main__links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: .9375rem
+  -webkit-column-gap: 2.5rem;
+  -moz-column-gap: 2.5rem;
+  column-gap: 2.5rem
 }
 .main__button {
   position: relative;
@@ -749,6 +796,11 @@ body::after {
   display: grid;
   grid-template-columns: repeat(3,1fr)
 }
+.main__decor {
+  position: absolute;
+  top: 110%;
+  left: 20%
+}
 .item-main-link {
   transition: all .5s
 }
@@ -820,6 +872,9 @@ body::after {
 }
 .swiper-button-disabled {
   opacity: .2
+}
+.item-come {
+  position: relative
 }
 .item-come__image {
   flex: 50%
@@ -985,6 +1040,36 @@ body::after {
   z-index: 10;
   padding: .9375rem 1.25rem
 }
+.item-come__decor {
+  position: absolute;
+  top: 80%;
+  right: 0
+}
+.item-come__decor-manicur {
+  position: absolute;
+  top: 80%;
+  right: 0
+}
+.item-come__triangle {
+  position: absolute;
+  top: 0;
+  left: 0
+}
+.item-come__circle-men {
+  position: absolute;
+  top: 100%;
+  right: 0
+}
+.item-come__circle-brow {
+  position: absolute;
+  top: 120%;
+  left: 20%
+}
+.item-come__decor-brow {
+  position: absolute;
+  top: 100%;
+  left: 50%
+}
 @-webkit-keyframes rotate-circle {
   100% {
     -webkit-transform: rotate(360deg);
@@ -998,6 +1083,7 @@ body::after {
   }
 }
 .shop__body {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1082,7 +1168,13 @@ body::after {
   -webkit-animation: rotate 8s linear infinite;
   animation: rotate 8s linear infinite
 }
+.shop__triangle {
+  position: absolute;
+  top: 50%;
+  left: 50%
+}
 .beauty__body {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1164,6 +1256,16 @@ body::after {
   height: auto;
   -webkit-animation: rotate 8s linear infinite;
   animation: rotate 8s linear infinite
+}
+.beauty__triangle {
+  position: absolute;
+  top: 10%;
+  right: 0
+}
+.beauty__triangle-end {
+  position: absolute;
+  top: 100%;
+  right: 10%
 }
 .blog__container {
   position: relative;
@@ -1268,6 +1370,7 @@ body::after {
   border-radius: 1.5625rem
 }
 .contact__container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1374,6 +1477,18 @@ body::after {
 .contact__image-ok img {
   width: 100%;
   height: auto
+}
+.contact__triangle {
+  position: absolute;
+  top: 50%;
+  left: 40%
+}
+.contact__decor {
+  position: absolute;
+  top: -2%;
+  right: -1%;
+  width: 2.8125rem;
+  height: 2.8125rem
 }
 .tippy-box[data-animation=fade][data-state=hidden] {
   opacity: 0
@@ -1919,7 +2034,8 @@ body::after {
     text-align: center
   }
   .main__links {
-    flex-direction: column
+    flex-direction: column;
+    row-gap: .9375rem
   }
   .main__items {
     -webkit-column-gap: 1.25rem;
@@ -1998,6 +2114,12 @@ body::after {
   .contact__container {
     flex-direction: column;
     justify-content: center
+  }
+  .contact__triangle {
+    display: none
+  }
+  .contact__decor {
+    display: none
   }
 }
 @media (max-width:47.99875em)and (any-hover:none) {

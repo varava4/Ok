@@ -12251,6 +12251,11 @@
                 duration: 1,
                 opacity: 0
             }, "-=1");
+            gsapWithCSS.from(".main__decor", {
+                duration: 1,
+                opacity: 0,
+                scale: 5
+            }, "-=1");
             gsapWithCSS.to(".loader", {
                 css: {
                     display: "none"
@@ -12265,23 +12270,32 @@
                 scrub: true,
                 pin: true
             }
-        }).from(".item-come__image-1", {
-            scrollTrigger: {
-                trigger: ".item-come-1",
-                start: "-40% 0",
-                scrub: true
-            },
-            scale: 1.3,
-            xPercent: 50
         }).from(".item-come__content-1", {
             scrollTrigger: {
                 trigger: ".item-come-1",
                 start: "-40% 0",
                 scrub: true
             },
+            scale: 1.5,
+            xPercent: -50
+        }).from(".item-come__image-1", {
+            scrollTrigger: {
+                trigger: ".item-come-1",
+                start: "-40% 0",
+                scrub: true
+            },
             opacity: 0,
-            xPercent: 100,
+            xPercent: -100,
             scale: 1.5
+        }).from(".item-come__decor", {
+            scrollTrigger: {
+                trigger: ".item-come-1",
+                start: "-40% 0",
+                scrub: true
+            },
+            opacity: 0,
+            scale: 5,
+            x: 500
         }).from(".item-come-2", {
             scrollTrigger: {
                 trigger: ".item-come-2",
@@ -12289,23 +12303,44 @@
                 scrub: true,
                 pin: true
             }
-        }).from(".item-come__image-2", {
-            scrollTrigger: {
-                trigger: ".item-come-2",
-                start: "-40% 0",
-                scrub: true
-            },
-            scale: 1.3,
-            xPercent: -50
         }).from(".item-come__content-2", {
             scrollTrigger: {
                 trigger: ".item-come-2",
                 start: "-40% 0",
                 scrub: true
             },
+            scale: 1.5,
+            xPercent: 50
+        }).from(".item-come__image-2", {
+            scrollTrigger: {
+                trigger: ".item-come-2",
+                start: "-40% 0",
+                scrub: true
+            },
             opacity: 0,
-            xPercent: -100,
+            xPercent: 100,
             scale: 1.5
+        }).from(".item-come__triangle", {
+            scrollTrigger: {
+                trigger: ".item-come-2",
+                start: "-40% 0",
+                scrub: true
+            },
+            opacity: 0,
+            rotate: 720,
+            scale: 5,
+            x: -500,
+            y: 500
+        }).from(".item-come__circle-men", {
+            scrollTrigger: {
+                trigger: ".item-come-2",
+                start: "-40% 0",
+                scrub: true
+            },
+            opacity: 0,
+            scale: 5,
+            x: 500,
+            y: -500
         }).from(".item-come-3", {
             scrollTrigger: {
                 trigger: ".item-come-3",
@@ -12313,23 +12348,33 @@
                 scrub: true,
                 pin: true
             }
-        }).from(".item-come__image-3", {
-            scrollTrigger: {
-                trigger: ".item-come-3",
-                start: "-40% 0",
-                scrub: true
-            },
-            scale: 1.3,
-            xPercent: 50
         }).from(".item-come__content-3", {
             scrollTrigger: {
                 trigger: ".item-come-3",
                 start: "-40% 0",
                 scrub: true
             },
+            scale: 1.5,
+            xPercent: -50
+        }).from(".item-come__image-3", {
+            scrollTrigger: {
+                trigger: ".item-come-3",
+                start: "-40% 0",
+                scrub: true
+            },
             opacity: 0,
-            xPercent: 100,
+            xPercent: -100,
             scale: 1.5
+        }).from(".item-come__decor-manicur", {
+            scrollTrigger: {
+                trigger: ".item-come-3",
+                start: "-40% 0",
+                scrub: true
+            },
+            opacity: 0,
+            x: 500,
+            y: -500,
+            scale: 5
         }).from(".item-come-4", {
             scrollTrigger: {
                 trigger: ".item-come-4",
@@ -12337,23 +12382,43 @@
                 scrub: true,
                 pin: true
             }
-        }).from(".item-come__image-4", {
-            scrollTrigger: {
-                trigger: ".item-come-4",
-                start: "-40% 0",
-                scrub: true
-            },
-            scale: 1.3,
-            xPercent: -50
         }).from(".item-come__content-4", {
             scrollTrigger: {
                 trigger: ".item-come-4",
                 start: "-40% 0",
                 scrub: true
             },
+            scale: 1.5,
+            xPercent: 50
+        }).from(".item-come__image-4", {
+            scrollTrigger: {
+                trigger: ".item-come-4",
+                start: "-40% 0",
+                scrub: true
+            },
             opacity: 0,
-            xPercent: -100,
+            xPercent: 100,
             scale: 1.5
+        }).from(".item-come__circle-brow", {
+            scrollTrigger: {
+                trigger: ".item-come-4",
+                start: "-40% 0",
+                scrub: true
+            },
+            opacity: 0,
+            x: -500,
+            y: -500,
+            scale: 5
+        }).from(".item-come__decor-brow", {
+            scrollTrigger: {
+                trigger: ".item-come-4",
+                start: "-40% 0",
+                scrub: true
+            },
+            opacity: 0,
+            x: 500,
+            y: 500,
+            scale: 5
         });
         const tlCome = gsapWithCSS.timeline();
         if (laptopScreen.matches) tlCome.from(".shop__body", {
@@ -12363,23 +12428,34 @@
                 scrub: true,
                 pin: true
             }
-        }).from(".shop__images", {
-            scrollTrigger: {
-                trigger: ".shop__body",
-                start: "-40% 0",
-                scrub: true
-            },
-            scale: 1.3,
-            xPercent: -50
         }).from(".shop__content", {
             scrollTrigger: {
                 trigger: ".shop__body",
                 start: "-40% 0",
                 scrub: true
             },
+            scale: 1.3,
+            xPercent: 50
+        }).from(".shop__images", {
+            scrollTrigger: {
+                trigger: ".shop__body",
+                start: "-40% 0",
+                scrub: true
+            },
             opacity: 0,
-            xPercent: -100,
+            xPercent: 100,
             scale: 1.5
+        }).from(".shop__triangle", {
+            scrollTrigger: {
+                trigger: ".shop__body",
+                start: "-40% 0",
+                scrub: true
+            },
+            opacity: 0,
+            x: -500,
+            y: -500,
+            rotate: 720,
+            scale: 5
         });
         const tlBeauty = gsapWithCSS.timeline();
         if (laptopScreen.matches) tlBeauty.from(".beauty__body", {
@@ -12395,17 +12471,39 @@
                 start: "-40% 0",
                 scrub: true
             },
-            scale: 1.3,
-            xPercent: 50
+            scale: 1.5,
+            xPercent: -50,
+            opacity: 0
         }).from(".beauty__content", {
             scrollTrigger: {
                 trigger: ".beauty__body",
                 start: "-40% 0",
                 scrub: true
             },
+            xPercent: -50,
+            scale: 1.3
+        }).from(".beauty__triangle", {
+            scrollTrigger: {
+                trigger: ".beauty__body",
+                start: "-40% 0",
+                scrub: true
+            },
             opacity: 0,
-            xPercent: 100,
-            scale: 1.5
+            x: 500,
+            y: -500,
+            rotate: 720,
+            scale: 5
+        }).from(".beauty__triangle-end", {
+            scrollTrigger: {
+                trigger: ".beauty__body",
+                start: "-20% 0",
+                scrub: true
+            },
+            opacity: 0,
+            x: -500,
+            y: 500,
+            rotate: -720,
+            scale: 5
         });
         const tlContact = gsapWithCSS.timeline();
         if (laptopScreen.matches) tlContact.from(".contact__container", {
@@ -12415,23 +12513,44 @@
                 scrub: true,
                 pin: true
             }
-        }).from(".contact__map", {
-            scrollTrigger: {
-                trigger: ".contact__container",
-                start: "-40% 0",
-                scrub: true
-            },
-            scale: 1.3,
-            xPercent: -50
         }).from(".contact__content", {
             scrollTrigger: {
                 trigger: ".contact__container",
                 start: "-40% 0",
                 scrub: true
             },
+            scale: 1.3,
+            xPercent: 50
+        }).from(".contact__map", {
+            scrollTrigger: {
+                trigger: ".contact__container",
+                start: "-40% 0",
+                scrub: true
+            },
             opacity: 0,
-            xPercent: -100,
+            xPercent: 100,
             scale: 1.5
+        }).from(".contact__triangle", {
+            scrollTrigger: {
+                trigger: ".contact__container",
+                start: "-60% 0",
+                scrub: true
+            },
+            opacity: 0,
+            x: -500,
+            y: -500,
+            rotate: 720,
+            scale: 5
+        }).from(".contact__decor", {
+            scrollTrigger: {
+                trigger: ".contact__container",
+                start: "-60% 0",
+                scrub: true
+            },
+            opacity: 0,
+            x: 500,
+            y: -500,
+            scale: 5
         });
         window["FLS"] = true;
         addLoadedClass();
