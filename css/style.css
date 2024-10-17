@@ -2097,6 +2097,9 @@ body::after {
   .shop__inner {
     justify-content: center
   }
+  .shop__triangle {
+    display: none
+  }
   .beauty__body {
     -webkit-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
@@ -2110,6 +2113,9 @@ body::after {
   }
   .beauty__inner {
     justify-content: center
+  }
+  .beauty__triangle {
+    display: none
   }
   .contact__container {
     flex-direction: column;
